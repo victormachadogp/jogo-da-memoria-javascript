@@ -113,6 +113,28 @@ $('.card').click(function () {
     }
 
 
+    // checar se todos os card tem a classe open ao mesmo tempo 
+    if ($(".deck li.open").length == $(".deck li").length) {
+        console.log('agora terminou')
+        alert('Voce terminou o jogo');
+    } 
+      else {
+         console.log('ainda não terminou')
+     }
+
+
+
+
+
+
+
+
+
+    // if ($(classe2Card).children()[0].classList[2] === "match") {
+    //     console.log('jogo terminado');
+    // } else {
+
+    // }
 
 
 
