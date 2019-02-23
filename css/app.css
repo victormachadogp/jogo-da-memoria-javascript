@@ -77,10 +77,61 @@ h1 {
 }
 
 .deck .card.match {
+    
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    animation: bounce 1.1s linear;
+    
 }
+
+@keyframes bounce {
+    10% {
+        transform: scale(.40);
+      }
+    30% {
+      transform: scale(1.15);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  
+.deck .card.not-match {
+    cursor: default;
+    background: #cc1c01;
+    font-size: 33px;
+    animation: wiggle 1.1s linear;
+    
+}
+
+
+
+@keyframes wiggle {
+    0% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-10deg);
+    }
+    20% {
+      transform: rotateZ(20deg);
+    }
+    25% {
+      transform: rotateZ(-0deg);
+    }
+    30% {
+      transform: rotateZ(10deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
 
 /*
  * Styles for the Score Panel

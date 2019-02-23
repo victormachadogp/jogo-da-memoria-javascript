@@ -35,7 +35,8 @@ var guardarCard = null;
 
 $('.restart').click(function () {
 
-    $('.card').removeClass('open')
+    $('.card').removeClass('open');
+    $('.card').removeClass('match');
 
 })
 
@@ -66,22 +67,41 @@ $('.card').click(function () {
 
         if (classe1Card === classe2Card) {
             console.log('São iguais');
-            guardarCard = null;
+            setTimeout(
+                function () {
+                    guardarCard.addClass('match');
+                    guardarCard = null;
+                }, 310);
+                setTimeout(
+                function () {
+                    segundoCard.addClass('match');
+               }, 310);
+            
         }
         else {
             console.log('são diferentes')
-            
+
             setTimeout(
                 function () {
+                    guardarCard.addClass('not-match');
                     
+                    segundoCard.addClass('not-match');
+                }, 400);
+
+
+            setTimeout(
+                function () {
+
                     guardarCard.removeClass('open');
+                    guardarCard.removeClass('not-match');
                     guardarCard = null;
                     segundoCard.removeClass('open');
-                }, 1500);
-                
-                
+                    segundoCard.removeClass('not-match');
+                }, 1100);
+
+
         }
-        
+
     }
     // comparação do primeiro card com o segundo
 
