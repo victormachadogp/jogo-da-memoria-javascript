@@ -33,7 +33,7 @@ var guardarCard = null;
 
 
 
-$('.restart').click(function () {
+ $('.restart').click(function() {
 
     $('.card').removeClass('open');
     $('.card').removeClass('match');
@@ -47,8 +47,39 @@ var guardarCard = null;
 var classe1Card;
 var segundoCard;
 
+var clicks = 0;
+    function hello() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+        document.getElementById("cliques").innerHTML = clicks;
+        
+    };
 
-$('.card').click(function () {
+
+$('.card').click(function() {
+
+  
+    // tempo do meu jogo
+    // arrumar
+        // var minutesLabel = document.getElementById("minutes");
+        // var secondsLabel = document.getElementById("seconds");
+        // var totalSeconds = 0;
+        // setInterval(setTime, 1000);
+
+        // function setTime() {
+        // ++totalSeconds;
+        // secondsLabel.innerHTML = pad(totalSeconds % 60);
+        // minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        // }
+
+        // function pad(val) {
+        // var valString = val + "";
+        // if (valString.length < 2) {
+        //     return "0" + valString;
+        // } else {
+        //     return valString;
+        // }}  
+
 
     $(this).addClass('open');
     console.log(guardarCard);
@@ -98,11 +129,14 @@ $('.card').click(function () {
                     segundoCard.removeClass('open');
                     segundoCard.removeClass('not-match');
                 }, 1100);
-
-
         }
-
     }
+
+    
+        
+    
+
+    
     // comparação do primeiro card com o segundo
 
 
@@ -115,13 +149,18 @@ $('.card').click(function () {
 
     // checar se todos os card tem a classe open ao mesmo tempo 
     if ($(".deck li.open").length == $(".deck li").length) {
-        console.log('agora terminou')
-        alert('Voce terminou o jogo');
+        console.log('agora terminou');
+        $('#myModal').modal('show');
+
     } 
       else {
          console.log('ainda não terminou')
      }
 
+     $('#reset').click(function() {
+        $('.card').removeClass('open');
+        $('.card').removeClass('match');
+     } )
 
 
 

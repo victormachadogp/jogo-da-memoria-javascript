@@ -7,6 +7,12 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="lib/easytimer/dist/easytimer.min.js"></script>
+    <script>
+        var timerInstance = new easytimer.Timer();
+    </script>
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -21,66 +27,98 @@
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
-        	</ul>
+            </ul>
+            
+            <!-- movimentos no jogo -->
+            <span><a id="clicks">0</a></span>  Moves
 
-        	<span class="moves">3</span> Moves
+            <!-- tempo -->
+            <label id="minutes">00</label>:<label id="seconds">00</label>
 
             <div class="restart">
+                    
         		<i class="fa fa-repeat"></i>
-        	</div>
+            </div>
+            
         </section>
+        
 
         <ul class="deck">
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-diamond"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-paper-plane-o"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-anchor"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-bolt"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-cube"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-anchor"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-leaf"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-bicycle"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-diamond"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-bomb"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-leaf"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-bomb"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-bolt"></i>
             </li>
-            <li class="card">
+            <li class="card onclick="hello()"">
                 <i class="fa fa-bicycle"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-paper-plane-o"></i>
             </li>
-            <li class="card">
+            <li class="card" onclick="hello()">
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
     </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="myModalLabel">Parabéns, Você Ganhou!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+              Você completou o jogo! com um total de
+              <span id="cliques"><a id="clicks">0</a></span>
+              cliques
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="reset" data-dismiss="modal">Jogar Novamente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
     <script src="js/app.js"></script>
 </body>
