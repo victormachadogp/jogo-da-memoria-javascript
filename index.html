@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="lib/easytimer/dist/easytimer.min.js"></script>
+    <script src="js/easytimer.min.js"></script>
     <script>
         var timerInstance = new easytimer.Timer();
     </script>
@@ -24,74 +24,32 @@
 
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star star1"></i></li>
+        		<li><i class="fa fa-star star2"></i></li>
+        		<li><i class="fa fa-star star3"></i></li>
             </ul>
             
             <!-- movimentos no jogo -->
             <span><a id="clicks">0</a></span>  Moves
 
             <!-- tempo -->
-            <label id="minutes">00</label>:<label id="seconds">00</label>
+            <!-- <label id="minutes">00</label>:<label id="seconds">00</label> -->
+            <div id="chronoExample">
+            <span id="basicUsage" class="values">00:00:00</span>
 
-            <div class="restart">
+
+            <div class="restart resetButton">
                     
         		<i class="fa fa-repeat"></i>
             </div>
-            
+        </div>
         </section>
         
 
-        <ul class="deck">
-            <li class="card" onclick="hello()">
+        <ul class="deck" id="deck">
+            <!-- <li class="card" onclick="hello()">
                 <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card onclick="hello()"">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" onclick="hello()">
-                <i class="fa fa-cube"></i>
-            </li>
+            </li> -->
         </ul>
     </div>
 
@@ -108,7 +66,15 @@
                 
               Você completou o jogo! com um total de
               <span id="cliques"><a id="clicks">0</a></span>
-              cliques
+              Cliques<br>
+              Em <span id="finalTime">00:00:00</span><br>
+              E obteve:
+              <section class="score-panel">
+                <ul class="stars">
+                    <li><i class="fa fa-star star1"></i></li>
+                    <li><i class="fa fa-star star2"></i></li>
+                    <li><i class="fa fa-star star3"></i></li>
+                </ul>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
