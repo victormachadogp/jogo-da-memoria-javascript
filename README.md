@@ -12,3 +12,8 @@ Ao clicar rapidamente sobre diferentes cards do baralho o jogo acaba criando um 
 ###### Solução
 Para continuar o jogo após o bug descrito acima basta apenas clicar no botão de reiniciar.
 
+## Funcionalidades
+
+Após 40 tentativas ou movimentos do jogador, o jogador perde 1 estrela na pontuação.
+Após 50 movimentos o jogador perde 2 estrelas, ficando com apenas 1 restante até o final do jogo ou o reinicio do mesmo.
+
