@@ -1,20 +1,14 @@
 # Memory Game Project
 
-## Table of Contents
+O jogo funciona com base nas mesmas regras do jogo original, o objetivo é encontrar todos os cards que possuam imagens iguais.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Tabela ode Conteúdo
 
-## Instructions
+* [Bugs](#bugs)
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Bugs
 
-To get started, open `js/app.js` and start building out the app's functionality
+Ao clicar rapidamente sobre diferentes cards do baralho o jogo acaba criando um delay e isso pode deixar algumas cartas viradas para cima em vermelho.
+###### Solução
+Para continuar o jogo após o bug descrito acima basta apenas clicar no botão de reiniciar.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
