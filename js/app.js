@@ -10,6 +10,8 @@ $(document).ready(function () {
     function discardCards() {
         var listOfCards = ["fa-diamond", "fa-bomb", "fa-paper-plane-o", "fa-cube", "fa-leaf", "fa-bicycle", "fa-anchor", "fa-bolt", "fa-diamond", "fa-bomb", "fa-paper-plane-o", "fa-cube", "fa-leaf", "fa-bicycle", "fa-anchor", "fa-bolt"];
 
+
+
         /*
          * Display the cards on the page
          *   - shuffle the list of cards using the provided "shuffle" method below
@@ -92,12 +94,9 @@ $(document).ready(function () {
     var timer;
 
     
-    // // timer
-    // timer = new easytimer.Timer();
-    // timer.start();
-    // timer.addEventListener('secondsUpdated', function (e) {
-    //     $('#basicUsage').html(timer.getTimeValues().toString());
-    // });
+
+
+    
     
 
     var clicks = 0;
@@ -118,6 +117,10 @@ $(document).ready(function () {
             $('.star2').addClass('d-none');
         }
 
+        // remover as classes para evitar muitos cliques
+        $('.card').removeClass('not-match');
+        $('.card').removeClass('open');
+        
 
 
         $(self).addClass('open');
@@ -128,6 +131,7 @@ $(document).ready(function () {
             console.log("Primeiro Card Clicado");
             classe1Card = $(self).children()[0].classList[1];
             guardarCard = $(self);
+            
         }
         // se o primeiro card não for nulo = segundo card
         // segundo card abaixo:
@@ -146,6 +150,15 @@ $(document).ready(function () {
                 setTimeout(
                     function () {
                         segundoCard.addClass('match');
+                        if ($(".deck li.match").length == $(".deck li").length) {
+                            console.log('agora terminou');
+                            $('#finalTime').html(timer.getTimeValues().toString());
+                            $('#myModal').modal({backdrop: 'static', keyboard: false});
+                            $('#chronoExample .pauseButton').toggle(function () {
+                                timer.pause();
+                            });
+                
+                        }
                     }, 310);
 
             }
@@ -179,25 +192,10 @@ $(document).ready(function () {
 
 
 
-        // checar se todos os card tem a classe open ao mesmo tempo 
-        if ($(".deck li.open").length == $(".deck li").length) {
-            console.log('agora terminou');
-            $('#finalTime').html(timer.getTimeValues().toString());
-            $('#myModal').modal({backdrop: 'static', keyboard: false});
-            $('#chronoExample .pauseButton').toggle(function () {
-                timer.pause();
-            });
-
-        }
-
-
-
     }
 
     
     // timer
-
-
       $( ".deck" ).one( "click", function( event ) {
         timer = new easytimer.Timer();
         timer.start();
