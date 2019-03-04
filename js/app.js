@@ -70,6 +70,11 @@ $(document).ready(function () {
         $('#chronoExample .resetButton').show(function () {
             timer.reset();
         });
+        $('#chronoExample .stopButton').show(function () {
+            timer.stop();
+        });
+
+
         document.getElementById("deck").innerHTML = "";
         discardCards();
         $('.card').click(function () {
@@ -87,18 +92,15 @@ $(document).ready(function () {
     var timer;
 
     
-    // timer
-    timer = new easytimer.Timer();
-    timer.start();
-    timer.addEventListener('secondsUpdated', function (e) {
-        $('#basicUsage').html(timer.getTimeValues().toString());
-    });
+    // // timer
+    // timer = new easytimer.Timer();
+    // timer.start();
+    // timer.addEventListener('secondsUpdated', function (e) {
+    //     $('#basicUsage').html(timer.getTimeValues().toString());
+    // });
+    
 
     var clicks = 0;
-
-
-
-
 
     function cardClicked(self) {
 
@@ -156,7 +158,7 @@ $(document).ready(function () {
                         guardarCard.addClass('not-match');
 
                         segundoCard.addClass('not-match');
-                    }, 400);
+                    }, 200);
 
                 // apos ficarem vermelhos eles vao retornar virados para baixo
                 setTimeout(
@@ -167,7 +169,7 @@ $(document).ready(function () {
                         guardarCard = null;
                         segundoCard.removeClass('open');
                         segundoCard.removeClass('not-match');
-                    }, 1100);
+                    }, 650);
             }
 
 
@@ -181,13 +183,31 @@ $(document).ready(function () {
         if ($(".deck li.open").length == $(".deck li").length) {
             console.log('agora terminou');
             $('#finalTime').html(timer.getTimeValues().toString());
-            $('#myModal').modal('show');
+            $('#myModal').modal({backdrop: 'static', keyboard: false});
+            $('#chronoExample .pauseButton').toggle(function () {
+                timer.pause();
+            });
 
         }
 
 
 
     }
+
+    
+    // timer
+
+
+      $( ".deck" ).one( "click", function( event ) {
+        timer = new easytimer.Timer();
+        timer.start();
+        timer.addEventListener('secondsUpdated', function (e) {
+        $('#basicUsage').html(timer.getTimeValues().toString());    
+    });
+        
+    });
+      
+    
 
 
 
