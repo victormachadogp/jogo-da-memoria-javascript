@@ -1,6 +1,6 @@
 # Memory Game Project
 
-O jogo funciona com base nas mesmas regras do jogo original, o objetivo é encontrar todos os cards que possuam imagens iguais, pra isso virando de cada vez um card para cima até achar o par.
+O jogo funciona com base nas mesmas regras do jogo original, o objetivo é encontrar todos os cards que possuam imagens iguais, pra isso, virando um card de cada vez para cima até achar o par.
 
 ## Tabela de Conteúdo
 
@@ -13,7 +13,7 @@ Para iniciar o jogo basta baixar esse repositório e iniciar o arquivo Index.htm
 
 ## Funcionalidades
 
-O tempo percorrido para finalização do jogo será printado no modal após que os card estiverem pra cima, porém o tempo não possui influência sobre a quantidade de estrelas no jogo.
+O tempo percorrido para finalização do jogo será printado no modal após todos os card estiverem pra cima, porém o tempo não possui influência sobre a quantidade de estrelas no jogo.
 
 Após 40 tentativas ou movimentos do jogador, o jogador perde 1 estrela na pontuação.
 
