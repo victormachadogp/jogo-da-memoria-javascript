@@ -103,6 +103,7 @@ $(document).ready(function () {
 
     function cardClicked(self) {
 
+         $('.card').off();  //adicionei agora
         console.log(self);
         
 
@@ -116,10 +117,6 @@ $(document).ready(function () {
         } else if (clicks >= 50) {
             $('.star2').addClass('d-none');
         }
-
-        // remover as classes para evitar muitos cliques
-        $('.card').removeClass('not-match');
-        $('.card').removeClass('open');
         
 
 
@@ -131,6 +128,9 @@ $(document).ready(function () {
             console.log("Primeiro Card Clicado");
             classe1Card = $(self).children()[0].classList[1];
             guardarCard = $(self);
+            $('.card').click(function () {
+                cardClicked(this);
+            });
             
         }
         // se o primeiro card não for nulo = segundo card
@@ -159,6 +159,10 @@ $(document).ready(function () {
                             });
                 
                         }
+                        $('.card').click(function () {
+                            cardClicked(this);
+                        });
+                        
                     }, 310);
 
             }
@@ -182,6 +186,9 @@ $(document).ready(function () {
                         guardarCard = null;
                         segundoCard.removeClass('open');
                         segundoCard.removeClass('not-match');
+                        $('.card').click(function () {
+                            cardClicked(this);
+                        });
                     }, 650);
             }
 
